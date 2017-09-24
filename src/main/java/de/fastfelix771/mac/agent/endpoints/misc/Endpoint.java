@@ -1,4 +1,4 @@
-package de.fastfelix771.mac.agent.misc;
+package de.fastfelix771.mac.agent.endpoints.misc;
 
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

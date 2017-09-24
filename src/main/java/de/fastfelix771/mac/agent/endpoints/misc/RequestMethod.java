@@ -1,4 +1,4 @@
-package de.fastfelix771.mac.agent.misc;
+package de.fastfelix771.mac.agent.endpoints.misc;
 
 public enum RequestMethod {
 	
