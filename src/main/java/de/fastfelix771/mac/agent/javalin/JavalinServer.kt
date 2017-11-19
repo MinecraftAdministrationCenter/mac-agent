@@ -2,7 +2,7 @@ package de.fastfelix771.mac.agent.javalin
 
 import de.fastfelix771.mac.agent.config.ServerConfig
 import de.fastfelix771.mac.agent.endpoints.global.responses.Error
-import de.fastfelix771.mac.agent.endpoints.v1.TestKotlin
+import de.fastfelix771.mac.agent.endpoints.misc.API
 import de.fastfelix771.mac.agent.util.ConfigUtil
 import io.javalin.Context
 import io.javalin.Javalin
@@ -37,7 +37,9 @@ object JavalinServer {
 			ipAddress(config.ip)
 		}
 		
-		app.get("/test/kotlin", TestKotlin())
+		EndpointLoader.load(app, API.GLOBAL)
+		EndpointLoader.load(app, API.v1)
+		
 		app.start()
 	}
 
