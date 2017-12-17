@@ -14,7 +14,7 @@ object JavalinServer {
 		ConfigUtil.save(ServerConfig(), Paths.get("config", "server.xml"), true)
 	}
 	
-	val config = ConfigUtil.load(ServerConfig().javaClass, Paths.get("config", "server.xml"))
+	val config = ConfigUtil.load(ServerConfig::class.java, Paths.get("config", "server.xml"))
 
 	fun start() {
 		if (config == null) {
@@ -29,7 +29,7 @@ object JavalinServer {
 			
 			after({ ctx: Context ->
 				if (ctx.status() == 404) {
-					Error.UNKNOWN_ENDPOINT.send(ctx)
+					Error.UNKNOWN_ENDPOINT close ctx
 				}
 			})
 			

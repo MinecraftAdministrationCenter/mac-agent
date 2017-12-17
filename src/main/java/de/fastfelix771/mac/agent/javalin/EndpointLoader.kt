@@ -14,16 +14,16 @@ object EndpointLoader {
 		val reflections = Reflections(path)
 		val endpoints = reflections.getTypesAnnotatedWith(Endpoint::class.java)
 		
-		for (endpoint in endpoints) {
-			val annotation = endpoint.getAnnotation(Endpoint::class.java)
+		endpoints.forEach {
+			val annotation = it.getAnnotation(Endpoint::class.java)
 			
 			val url = annotation.value;
 			val apiVersion = annotation.api;
 			
-			if (apiVersion != version) continue;
+			if (apiVersion != version) return;
 			
-			app.get("/${version}/$url/".replace("//", "/"), endpoint.newInstance() as Handler)
-			println("Loaded API ${version} Endpoint '${endpoint.simpleName}', mapped to '$url'")
+			app.get("/${version}/$url/".replace("//", "/"), it.newInstance() as Handler)
+			println("Loaded API ${version} Endpoint '${it.simpleName}', mapped to '$url'")
 		}
 	}
 	
