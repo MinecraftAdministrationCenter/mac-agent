@@ -1,0 +1,25 @@
+{
+  "name": "mac-agent",
+  "version": "0.0.1",
+  "description": "Minecraft Administration Center Agent",
+  "main": "dist/index.js",
+  "repository": "https://github.com/MinecraftAdministrationCenter/mac-agent.git",
+  "author": "Felix Drescher-Hackel <felix@drescher-hackel.de>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "@types/restify": "^7.2.7",
+    "@types/restify-errors": "^4.3.3",
+    "restify": "^7.6.0",
+    "restify-errors": "^6.1.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "strict": true,
+      "sourceMap": true,
+      "removeComments": true,
+      "noImplicitReturns": true,
+      "noImplicitAny": true,
+      "preserveConstEnums": true,
+      "outDir": "dist"
+    },
+    "exclude": [
+      "logs",
+      "node_modules"
+    ]
+  }
