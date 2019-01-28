@@ -1,9 +1,9 @@
 import Config from "./../models/Config"
 
-const port = (process.env.port && parseInt(process.env.port)) || 2019
-const id = process.env.id || "random-uuid-here"
+const port = (process.env.PORT && parseInt(process.env.PORT)) || 2019
+const id = process.env.ID || "random-uuid-here"
 
-const secret = process.env.secret || "IW€@rMy$unGl@ss3s@N8"
+const secret = process.env.SECRET || "IW€@rMy$unGl@ss3s@N8"
 
 const defaultConfig: Config = {
     port,
